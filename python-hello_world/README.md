@@ -1,1 +1,1 @@
-A directory for the first intranet project
+A directory for the intranet project: Python - Hello, World.
