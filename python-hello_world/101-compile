@@ -1,0 +1,3 @@
+#!/bin/bash
+PYFILE="2-print.py"
+python3 $PYFILE > "${PYFILE}c"
