@@ -1,0 +1,1 @@
+A repository for the Python programming course in ALU BSE second trimester

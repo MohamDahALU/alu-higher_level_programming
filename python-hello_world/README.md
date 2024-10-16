@@ -1,0 +1,1 @@
+A directory for the first intranet project
