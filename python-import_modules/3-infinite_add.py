@@ -7,4 +7,3 @@ if __name__ == "__main__":
     for i in args:
         res += int(i)
     print(res)
-    
