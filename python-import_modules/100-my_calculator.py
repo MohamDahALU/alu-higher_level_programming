@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from calculator_1 import *
+from calculator_1 import add, sub, mul, div
 import sys
 if __name__ == "__main__":
     args = sys.argv
@@ -13,14 +13,13 @@ if __name__ == "__main__":
 
     a = int(args[1])
     b = int(args[3])
-
+    
     if args[2] == "+":
-        result = add(a, b)
+        print("{} {} {} = {}".format(a, args[2], b, add(a, b)))
     elif args[2] == "-":
-        result = sub(a, b)
+        print("{} {} {} = {}".format(a, args[2], b, sub(a, b)))
     elif args[2] == "*":
-        result = mul(a, b)
+        print("{} {} {} = {}".format(a, args[2], b, mul(a, b)))
     elif args[2] == "/":
-        result = div(a, b)
-
-    print("{} {} {} = {}".format(args[1], args[2], args[3], args[result]))
+        print("{} {} {} = {}".format(a, args[2], b, div(a, b)))
+        
