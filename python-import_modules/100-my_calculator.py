@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-
+from calculator_1 import add, sub, mul, div
+from sys import argv
 if __name__ == "__main__":
-    args = sys.argv
+    args = argv
     if len(args) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
