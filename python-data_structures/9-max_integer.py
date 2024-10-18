@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-def divisible_by_2(my_list=[]):
-    new_list = []
-    for n in my_list:
-        new_list.append(n % 2 == 0)
-    return new_list
+def max_integer(my_list=[]):
+    if len(my_list) == 0:
+        return None
+
+    biggest = 0
+    for i in my_list:
+        if i > biggest:
+            biggest = i
+
+    return biggest
