@@ -14,8 +14,5 @@ class Square:
     def __init__(self, size):
         """
         Initializes the square with a given size.
-
-        Args:
-            size (int): The size of the square.
         """
         self.__size = size

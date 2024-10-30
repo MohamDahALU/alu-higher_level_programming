@@ -8,11 +8,6 @@ This module defines a Square class.
 class Square:
     """
     A class used to represent a Square.
-
-    Attributes
-    ----------
-    size : int
-        The size of the square's side.
     """
 
     def __init__(self, size=0):
