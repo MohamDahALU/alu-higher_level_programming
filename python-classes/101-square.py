@@ -67,9 +67,9 @@ class Square:
         Sets the position of the square.
         """
         if (
-            type(value) == tuple
-            and len(value) == 2
-            and all(type(v) == int and v >= 0 for v in value)
+            type(value) == tuple and 
+            len(value) == 2 and 
+            all(type(v) == int and v >= 0 for v in value)
         ):
             self.__position = value
         else:
