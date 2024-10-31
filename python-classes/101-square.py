@@ -16,12 +16,24 @@ class Square:
         """
         self.size = size
         self.position = position
-        
+
     def __str__(self):
         """
         Returns a string representation of the square for printing.
         """
-        self.my_print()
+        str = ""
+        if self.__size == 0:
+            return ""
+        for nl in range(self.__position[1]):
+            str += "\n"
+        for i in range(self.__size):
+            for space in range(self.__position[0]):
+                str += " "
+            for j in range(self.__size):
+                str += "#"
+            str += "\n"
+
+        return str
 
     @property
     def size(self):
@@ -54,9 +66,9 @@ class Square:
         Sets the position of the square.
         """
         if (
-            type(value) == tuple and
-            len(value) == 2 and
-            all(type(v) == int and v >= 0 for v in value)
+            type(value) == tuple
+            and len(value) == 2
+            and all(type(v) == int and v >= 0 for v in value)
         ):
             self.__position = value
         else:
