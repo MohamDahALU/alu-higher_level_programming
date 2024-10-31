@@ -32,7 +32,7 @@ class Square:
             for j in range(self.__size):
                 str += "#"
             if i < self.__size - 1:
-                    str += "\n"
+                str += "\n"
 
         return str
 
