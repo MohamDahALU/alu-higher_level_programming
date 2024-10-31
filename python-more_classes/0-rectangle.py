@@ -3,8 +3,10 @@
 This module defines a Rectangle class.
 """
 
+
 class Rectangle:
     """
     Represents a Rectangle
     """
+
     pass
