@@ -3,6 +3,7 @@
 This module defines a Node and a SinglyLinkedList class.
 """
 
+
 class Node:
     """
     Represents a node in a singly linked list.
