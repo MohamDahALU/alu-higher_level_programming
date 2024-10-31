@@ -31,7 +31,8 @@ class Square:
                 str += " "
             for j in range(self.__size):
                 str += "#"
-            str += "\n"
+            if j < self.__size - 1:
+                str += "\n"
 
         return str
 
