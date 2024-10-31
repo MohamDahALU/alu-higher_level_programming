@@ -47,7 +47,7 @@ class Square:
         """
         Sets the position of the square.
         """
-        if value != tuple or (value[0], value[1]) < (0, 0):
+        if value != tuple and (value[0], value[1]) < (0, 0):
             print("position must be a tuple of 2 positive integers")
 
     def area(self):
