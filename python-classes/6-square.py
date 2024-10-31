@@ -47,7 +47,7 @@ class Square:
         """
         Sets the position of the square.
         """
-        if value != (int, int) and (value[0], value[1]) < (0, 0):
+        if value != (int, int) or (value[0], value[1]) < (0, 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             return value
