@@ -14,8 +14,8 @@ class Square:
         """
         Initialize the square.
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -50,7 +50,8 @@ class Square:
         if (
             type(value) == tuple
             and len(value) == 2
-            and all(type(v) == int and v > 0 for v in value)
+            and type(value[0]) == int and type(value[1]) == int
+            and value[0] >= 0 and value[1] >= 0
         ):
             self.__position = value
         else:
@@ -71,8 +72,15 @@ class Square:
             print("")
             return ""
         for i in range(self.__size):
+            
             for space in range(self.__position[0]):
                 print(" ", end="")
             for j in range(self.__size):
                 print("#", end="")
             print("")
+
+
+
+# my_square_2 = Square(3, (1, 1))
+my_square_2 = Square(3, "Position")
+my_square_2.my_print()
