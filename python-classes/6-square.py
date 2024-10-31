@@ -50,8 +50,10 @@ class Square:
         if (
             type(value) == tuple
             and len(value) == 2
-            and type(value[0]) == int and type(value[1]) == int
-            and value[0] >= 0 and value[1] >= 0
+            and type(value[0]) == int
+            and type(value[1]) == int
+            and value[0] >= 0
+            and value[1] >= 0
         ):
             self.__position = value
         else:
@@ -73,7 +75,7 @@ class Square:
             return ""
         for nl in range(self.__position[1]):
             print("")
-        for i in range(self.__size): 
+        for i in range(self.__size):
             for space in range(self.__position[0]):
                 print(" ", end="")
             for j in range(self.__size):
