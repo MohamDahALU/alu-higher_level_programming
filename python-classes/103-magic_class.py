@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import math
-
 """
 This module defines a MagicClass that performs calculations for a circle.
 """
+import math
 
 
 class MagicClass:
