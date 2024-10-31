@@ -13,7 +13,7 @@ class MagicClass:
     methods to calculate its area and circumference.
     """
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """
         Initialize a MagicClass instance with a given radius.
         """
