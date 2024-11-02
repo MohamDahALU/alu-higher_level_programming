@@ -2,8 +2,11 @@
 """
 This module defines a BaseGeometry class.
 """
+
+
 class BaseGeometry:
     """
     This module defines a BaseGeometry class.
     """
+
     pass
