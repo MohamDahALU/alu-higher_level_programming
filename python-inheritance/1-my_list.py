@@ -13,5 +13,4 @@ class MyList(list):
     def print_sorted(self):
         copied = self.copy()
         copied.sort()
-        # print(copied)
-        return copied
+        print(copied)
