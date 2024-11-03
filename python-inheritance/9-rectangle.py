@@ -42,6 +42,12 @@ class Rectangle(BaseGeometry):
     A class used to represent a Rectangle, inheriting from BaseGeometry.
     """
 
+    def __init__(self, width, height):
+        """
+        Initialize a new Rectangle instance.
+        """
+        super().__init__(width, height)
+
     def __str__(self):
         """
         Returns a string representation of the Rectangle instance.
