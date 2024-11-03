@@ -9,6 +9,16 @@ class BaseGeometry:
     This module defines a BaseGeometry class.
     """
 
+    def __init__(self, width, height):
+        """
+        Initializes the Rectangle with the specified width and
+        height after validation.
+        """
+        self.integer_validator("height", height)
+        self.integer_validator("width", width)
+        self.__height = height
+        self.__width = width
+
     def area(self):
         """
         Calculates the area of the rectangle.
@@ -32,16 +42,6 @@ class Rectangle(BaseGeometry):
     A class used to represent a Rectangle, inheriting from BaseGeometry.
     """
 
-    def __init__(self, width, height):
-        """
-        Initializes the Rectangle with the specified width and
-        height after validation.
-        """
-        self.integer_validator("height", height)
-        self.integer_validator("width", width)
-        super().__height = height
-        super().__width = width
-    
     def __str__(self):
         """
         Returns a string representation of the Rectangle instance.
@@ -49,3 +49,7 @@ class Rectangle(BaseGeometry):
         The string is formatted as "width/height".
         """
         return f"{self.__width}/{self.__height}"
+
+
+r = Rectangle(1, 4)
+print(r.area())
