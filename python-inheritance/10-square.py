@@ -14,8 +14,6 @@ class BaseGeometry:
         Initializes the Rectangle with the specified width and
         height after validation.
         """
-        self.integer_validator("height", height)
-        self.integer_validator("width", width)
         self.__height = height
         self.__width = width
 
@@ -55,6 +53,8 @@ class Rectangle(BaseGeometry):
         Initialize a new Rectangle instance.
         """
         super().__init__(width, height)
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
 
