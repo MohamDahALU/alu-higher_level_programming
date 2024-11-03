@@ -12,4 +12,4 @@ def add_attribute(cls, name, value):
     try:
         setattr(cls, name, value)
     except Exception:
-        raise ValueError("can't add new attribute")
+        raise TypeError("can't add new attribute")
