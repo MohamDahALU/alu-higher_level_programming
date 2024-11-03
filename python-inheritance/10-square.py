@@ -60,7 +60,15 @@ class Rectangle(BaseGeometry):
 
 
 class Square(BaseGeometry):
+    """
+    A class used to represent a Square, which
+    inherits from BaseGeometry.
+    """
+
     def __init__(self, size):
+        """
+        Initialize a new Square instance.
+        """
         super().__init__(size, size)
         self.integer_validator("size", size)
         self.__size = size
