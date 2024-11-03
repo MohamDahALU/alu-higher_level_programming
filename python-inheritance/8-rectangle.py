@@ -26,9 +26,6 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
-def isinstance(cls1, cls2):
-    return True
-
 
 class Rectangle(BaseGeometry):
     """
