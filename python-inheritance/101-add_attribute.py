@@ -9,7 +9,7 @@ def add_attribute(cls, name, value):
     """
     Adds a new attribute to an object if possible.
     """
-    try:
-        setattr(cls, name, value)
-    except Exception:
+
+    if hasattr(cls, "__dict__") == False:
         raise TypeError("can't add new attribute")
+    setattr(cls, name, value)
