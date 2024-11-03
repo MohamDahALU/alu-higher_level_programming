@@ -9,12 +9,6 @@ class BaseGeometry:
     This module defines a BaseGeometry class.
     """
 
-    def area(self):
-        """
-        Calculates the area of the rectangle.
-        """
-        return self.__height * self.__width
-
     def integer_validator(self, name, value):
         """
         Validates that the provided value is an integer and greater than 0.
@@ -41,6 +35,12 @@ class Rectangle(BaseGeometry):
         self.integer_validator("width", width)
         self.__height = height
         self.__width = width
+
+    def area(self):
+        """
+        Calculates the area of the rectangle.
+        """
+        return self.__height * self.__width
 
     def __str__(self):
         """
