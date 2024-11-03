@@ -2,6 +2,7 @@
 """
 This module provides a function to add a new attribute
 to an object if possible.
+
 """
 
 
