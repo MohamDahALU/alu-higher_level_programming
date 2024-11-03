@@ -56,4 +56,4 @@ class Rectangle(BaseGeometry):
 
         The string is formatted as "width/height".
         """
-        return f"{self.__width}/{self.__height}"
+        return f"[Rectangle] {self.__width}/{self.__height}"
