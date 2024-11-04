@@ -3,44 +3,7 @@
 This module defines a BaseGeometry class.
 """
 
-
-class BaseGeometry:
-    """
-    This module defines a BaseGeometry class.
-    """
-
-    def __init__(self, width, height):
-        """
-        Initializes the Rectangle with the specified width and
-        height after validation.
-        """
-        self.__height = height
-        self.__width = width
-
-    def __str__(self):
-        """
-        Returns a string representation of the Rectangle instance.
-
-        The string is formatted as "width/height".
-        """
-        return f"[Rectangle] {self.__width}/{self.__height}"
-
-    def area(self):
-        """
-        Calculates the area of the rectangle.
-        """
-        return self.__height * self.__width
-
-    def integer_validator(self, name, value):
-        """
-        Validates that the provided value is an integer and greater than 0.
-        """
-
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
 class Rectangle(BaseGeometry):
