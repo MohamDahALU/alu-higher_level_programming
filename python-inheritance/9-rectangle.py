@@ -14,10 +14,16 @@ class BaseGeometry:
         Initializes the Rectangle with the specified width and
         height after validation.
         """
-        self.integer_validator("height", height)
-        self.integer_validator("width", width)
         self.__height = height
         self.__width = width
+
+    def __str__(self):
+        """
+        Returns a string representation of the Rectangle instance.
+
+        The string is formatted as "width/height".
+        """
+        return f"[Rectangle] {self.__width}/{self.__height}"
 
     def area(self):
         """
@@ -35,6 +41,7 @@ class BaseGeometry:
 
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+
 
 
 class Rectangle(BaseGeometry):
