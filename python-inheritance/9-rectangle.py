@@ -47,13 +47,7 @@ class Rectangle(BaseGeometry):
         Initialize a new Rectangle instance.
         """
         super().__init__(width, height)
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-
-    def __str__(self):
-        """
-        Returns a string representation of the Rectangle instance.
-
-        The string is formatted as "width/height".
-        """
-        return f"[Rectangle] {self.__width}/{self.__height}"
