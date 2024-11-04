@@ -22,7 +22,7 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
 
-class Square(BaseGeometry):
+class Square(Rectangle):
     """
     A class used to represent a Square, which
     inherits from BaseGeometry.
