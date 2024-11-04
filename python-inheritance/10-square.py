@@ -3,23 +3,7 @@
 This module defines a BaseGeometry class.
 """
 
-BaseGeometry = __import__("7-base_geometry").BaseGeometry
-
-
-class Rectangle(BaseGeometry):
-    """
-    A class used to represent a Rectangle, inheriting from BaseGeometry.
-    """
-
-    def __init__(self, width, height):
-        """
-        Initialize a new Rectangle instance.
-        """
-        super().__init__(width, height)
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
+Rectangle = __import__("9-rectangle").Rectangle
 
 
 class Square(Rectangle):
