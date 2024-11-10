@@ -14,9 +14,10 @@ def add_item():
     """
     Adds command-line arguments to a list stored in a JSON file.
     """
-
-    arr = load_from_json_file("add_item.json")
-
+    try:
+        arr = load_from_json_file("add_item.json")
+    except Exception:
+        arr = []
     arr += sys.argv[1:]
 
     save_to_json_file(arr, "add_item.json")
