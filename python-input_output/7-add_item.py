@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module provides a script to add command line 
+arguments to a list stored in a JSON file.
+"""
 
 import sys
 
