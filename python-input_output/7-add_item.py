@@ -3,7 +3,6 @@
 This module provides a script to add command line 
 arguments to a list stored in a JSON file.
 """
-
 import sys
 
 load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
