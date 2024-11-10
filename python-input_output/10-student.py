@@ -23,10 +23,8 @@ class Student:
         Converts the instance attributes to a dictionary representation.
         """
         if (
-            bool(attrs)
-            and isinstance(attrs, list)
-            and (all(isinstance(i, str) for i in attrs)
-                 or len(attrs) == 0)
+            isinstance(attrs, list)
+            and (all(isinstance(i, str) for i in attrs))
         ):
             newDict = {}
             for key, value in self.__dict__.items():
