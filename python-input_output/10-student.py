@@ -25,7 +25,8 @@ class Student:
         if (
             bool(attrs)
             and isinstance(attrs, list)
-            and all(isinstance(i, str) for i in attrs)
+            and (all(isinstance(i, str) for i in attrs)
+                 or len(attrs) == 0)
         ):
             newDict = {}
             for key, value in self.__dict__.items():
