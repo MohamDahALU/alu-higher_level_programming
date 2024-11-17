@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-This script displays the value of the 'X-Request-Id' header found in the response.
-"""
+"""This script displays the value"""
 import urllib.request
 import sys
 
