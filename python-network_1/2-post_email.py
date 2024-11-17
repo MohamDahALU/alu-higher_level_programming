@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script displays the value of the 'X-Request-Id' header found in the response.
+This is a script that makes a post request with data and
+then prints the response.
 """
 
 import sys
