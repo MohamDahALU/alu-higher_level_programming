@@ -3,7 +3,6 @@
 This script displays the value of the 'X-Request-Id' header found in the response.
 """
 
-
 import sys
 import urllib.request
 
