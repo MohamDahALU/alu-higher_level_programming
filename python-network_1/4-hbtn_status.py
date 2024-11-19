@@ -4,6 +4,7 @@
 This script makes a request and displays a
 response using the requests package.
 """
+
 import requests
 
 if __name__ == "__main__":
