@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-
 """
-This script makes a request and displays a
-response using the requests package.
+    This script makes a request and displays a
+    response using the requests package.
 """
 
 import requests
