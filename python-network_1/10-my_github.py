@@ -12,4 +12,4 @@ if __name__ == "__main__":
 
     response = requests.get(url, headers=headers)
     json = response.json()
-    print(json["id"] if response.status_code < 400 else json["message"])
+    print(json["id"] if response.status_code < 400 else "None")
