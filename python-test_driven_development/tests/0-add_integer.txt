@@ -52,5 +52,7 @@ Traceback (most recent call last):
     ...
 TypeError: b must be an integer
 
->>> add_integer(1e100, 1e100)
-20000000000000000318057822195198360936721617127890562779562655115495677544340762121626939971713630208
+>>> add_integer(1.7976931348623157e+308 + 1.7976931348623157e+308, 1)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
