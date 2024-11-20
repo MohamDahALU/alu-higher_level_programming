@@ -5,6 +5,10 @@ This module provides a function to  divides all elements of a matrix.
 
 
 def matrix_divided(matrix, div):
+    """
+    Divides all elements of a matrix by a given divisor.
+    """
+
     # Check for the first matrix error
     mat_valid = isinstance(matrix, list)
     if mat_valid:
