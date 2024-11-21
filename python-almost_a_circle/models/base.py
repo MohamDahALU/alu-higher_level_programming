@@ -18,8 +18,8 @@ class Base:
         Initialize a new Base instance.
         """
 
+        self.__nb_objects += 1
         if id != None:
             self.id = id
         else:
-            self.__nb_objects += 1
             self.id = self.__nb_objects
