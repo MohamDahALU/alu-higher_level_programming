@@ -12,7 +12,13 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    new_str = text.replace("? ", ". ")
-    new_str = new_str.replace(": ", ". ")
-    new_str = text.split(". ")
-    print("\n\n".join(new_str), end="")
+    portions = [""]
+    for i in text:
+        if i == " " and len(portions[-1]) == 0:
+            continue
+        portions[-1] += i
+        if i in [".", "?", ":"]:
+            portions.append("")
+    
+    print("\n\n".join(portions), end="")
+
