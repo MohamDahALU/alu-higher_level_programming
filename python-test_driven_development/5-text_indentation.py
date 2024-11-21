@@ -19,6 +19,5 @@ def text_indentation(text):
         portions[-1] += i
         if i in [".", "?", ":"]:
             portions.append("")
-    
-    print("\n\n".join(portions), end="")
 
+    print("\n\n".join(portions), end="")
