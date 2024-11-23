@@ -2,7 +2,6 @@
 """
 This module defines the Rectangle class, which inherits from the Base class.
 """
-Base = __import__("base").Base
 
 
 class Rectangle(Base):
