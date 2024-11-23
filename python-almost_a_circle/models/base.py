@@ -72,3 +72,17 @@ class Base:
 
         newIns.update(**dictionary)
         return newIns
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Reads a JSON file and returns a list of instances of the class.
+        """
+        try:
+            with open("{}.json".format(cls.__name__), "r") as file:
+                jsonData = file.read()
+                dictList = cls.from_json_string(jsonData)
+                insList = [cls.create(**i) for i in dictList]
+                return insList
+        except Exception:
+            return []
