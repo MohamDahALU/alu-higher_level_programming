@@ -139,3 +139,9 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) >= 5:
             self.y = args[4]
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of the Rectangle instance.
+        """
+        return self.__dict__
