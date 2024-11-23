@@ -16,6 +16,22 @@ class Square(Rectangle):
         x and y coordinates, and an optional id.
         """
         super().__init__(size, size, x, y, id)
+        self.size = size
+
+    @property
+    def size(self):
+        """
+        Gets the size of the square, which is equivalent to its width.
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        Sets the size of the square by updating both width and height.
+        """
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """
