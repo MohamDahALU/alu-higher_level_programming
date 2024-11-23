@@ -44,9 +44,8 @@ class Base:
         """
         with open("{}.json".format(cls.__name__), "w") as file:
             if list_objs:
-                file.write(cls.to_json_string(
-                    [i.to_dictionary() for i in list_objs])
-                )
+                obList = [i.to_dictionary() for i in list_objs]
+                file.write(cls.to_json_string(obList))
             else:
                 file.write(cls.to_json_string(list_objs))
 
@@ -59,3 +58,12 @@ class Base:
             return json.loads(json_string)
         else:
             return []
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Creates a new instance of the class with the provided
+        dictionary.
+        """
+        newIns = cls(1, 1, 1)
+        newIns.update(**dictionary)
