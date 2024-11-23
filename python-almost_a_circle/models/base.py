@@ -4,6 +4,7 @@ This module defines a Base class that serves as the foundation
 for other classes in the project.
 
 """
+import json
 
 
 class Base:
@@ -24,3 +25,9 @@ class Base:
             self.id = id
         else:
             self.id = self.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        if list_dictionaries:
+            return json.dumps(list_dictionaries)
+        else:
+            return "[]"
