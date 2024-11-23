@@ -2,6 +2,7 @@
 """
 This module defines a Base class that serves as the foundation
 for other classes in the project.
+
 """
 
 
