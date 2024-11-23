@@ -22,14 +22,23 @@ class TestMaxInteger(unittest.TestCase):
         b4 = Base(12)
         self.assertEqual(b4.id, 12)
     
-    def test_json_string_none(self):
+    def test_of_json_string_none(self):
         self.assertEqual(Base.to_json_string(None), "[]")
 
-    def test_json_string_empty_array(self):
+    def test_of_json_string_empty_array(self):
         self.assertEqual(Base.to_json_string([]), "[]")
     
-    def test_json_string_dictlist(self):
+    def test_of_json_string_dictlist(self):
         self.assertEqual(Base.to_json_string([{ 'id': 12 }]), '[{"id": 12}]')
+    
+    def test_from_json_string_dictlist(self):
+        self.assertEqual(Base.from_json_string(None), [])
+        
+    def test_from_json_string_dictlist(self):
+        self.assertEqual(Base.from_json_string([]), [])
+
+    def test_from_json_string_dictlist(self):
+        self.assertEqual(Base.from_json_string('[{ "id": 89 }]'), [{ "id": 89 }])
     
     
 
