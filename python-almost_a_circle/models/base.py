@@ -46,3 +46,10 @@ class Base:
                 )
             else:
                 file.write(cls.to_json_string(list_objs))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string:
+            return json.load(json_string)
+        else:
+            return []
