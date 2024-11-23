@@ -59,3 +59,14 @@ class Square(Rectangle):
             self.x = args[2]
         if len(args) >= 4:
             self.y = args[3]
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of the Square instance.
+        """
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
