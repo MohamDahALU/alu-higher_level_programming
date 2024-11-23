@@ -67,3 +67,4 @@ class Base:
         """
         newIns = cls(1, 1, 1)
         newIns.update(**dictionary)
+        return newIns
