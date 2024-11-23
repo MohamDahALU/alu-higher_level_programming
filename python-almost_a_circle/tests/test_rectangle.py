@@ -22,6 +22,30 @@ class TestMaxInteger(unittest.TestCase):
         b2 = Rectangle(1, 2, 3, 4)
         self.assertEqual(b2.x, 3)
         self.assertEqual(b2.y, 4)
+
+    def test_five_arguments(self):
+        b2 = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(b2.id, 5)
+
+    def test_width_string(self):
+        with self.assertRaises(TypeError) as err:
+            Rectangle("1", 2)
+        self.assertEqual(str(err.exception), "width must be an integer")
+
+    def test_height_string(self):
+        with self.assertRaises(TypeError) as err:
+            Rectangle(1, "2")
+        self.assertEqual(str(err.exception), "height must be an integer")
+
+    def test_x_string(self):
+        with self.assertRaises(TypeError) as err:
+            Rectangle(1, 2, "3")
+        self.assertEqual(str(err.exception), "x must be an integer")
+
+    def test_y_string(self):
+        with self.assertRaises(TypeError) as err:
+            Rectangle(1, 2, 3, "4")
+        self.assertEqual(str(err.exception), "y must be an integer")
         
 if __name__ == '__main__':
     unittest.main()
