@@ -39,6 +39,9 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        Writes the JSON string representation of list_objs to a file.
+        """
         with open("{}.json".format(cls.__name__), "w") as file:
             if list_objs:
                 file.write(cls.to_json_string(
@@ -49,7 +52,10 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        Converts a JSON string to a Python object.
+        """
         if json_string:
-            return json.load(json_string)
+            return json.loads(json_string)
         else:
             return []
