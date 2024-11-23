@@ -104,7 +104,9 @@ class Rectangle(Base):
         """
         Prints the Rectangle with the character '#'.
         """
+        print("\n" * self.y, end="")
         for i in range(self.height):
+            print(" " * self.x, end="")
             for j in range(self.width):
                 print("#", end="")
             print("")
