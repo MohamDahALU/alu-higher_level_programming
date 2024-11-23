@@ -3,6 +3,8 @@
 """
 import unittest
 from models.rectangle import Rectangle
+import io
+import sys
 
 
 class TestMaxInteger(unittest.TestCase):
@@ -64,21 +66,34 @@ class TestMaxInteger(unittest.TestCase):
     def test_str(self):
         obj = Rectangle(2, 2, 2, 2, 10)
         self.assertEqual(obj.__str__(), "[Rectangle] (10) 2/2 - 2/2")
-        
+      
     def test_display_no_xy(self):
         obj = Rectangle(2, 2)
-        stri = obj.display()
-        self.assertEqual(stri, None)
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        obj.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), "##\n##\n")
 
     def test_display_no_y(self):
         obj = Rectangle(2, 2, 2)
-        stri = obj.display()
-        self.assertEqual(stri, None)
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        obj.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), "  ##\n  ##\n")
         
     def test_display(self):
         obj = Rectangle(2, 2, 2, 2)
-        stri = obj.display()
-        self.assertEqual(stri, None)
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        obj.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), "\n\n  ##\n  ##\n")
+    
+    def test_to_dict(self):
+        obj = Rectangle(2, 2)
+        self.assertEqual(obj.to_dictionary(), {'height': 2, 'id': 18, 'width': 2, 'x': 0, 'y': 0})
         
 if __name__ == '__main__':
     unittest.main()
