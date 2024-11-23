@@ -119,10 +119,17 @@ class Rectangle(Base):
             self.id, self.x, self.y, self.width, self.height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
-        Update attributes instance using positional arguments.
+        Update attributes instance using positional and keyword arguments.
         """
+        attrs = ["id", "width", "height", "x", "y"]
+        if not args or len(args) == 0:
+            for i, x in kwargs.items():
+                if i in attrs:
+                    self.__setattr__(i, x)
+            return
+
         self.id = args[0]
         if len(args) >= 2:
             self.width = args[1]
