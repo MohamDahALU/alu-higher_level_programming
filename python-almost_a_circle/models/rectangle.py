@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-from base import Base
-
 """
 This module defines the Rectangle class, which inherits from the Base class.
 """
+from base import Base
 
 
 class Rectangle(Base):
