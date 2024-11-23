@@ -65,7 +65,6 @@ class Base:
         Creates a new instance of the class with the provided
         dictionary.
         """
-        newIns
         if cls.__name__ == "Rectangle":
             newIns = cls(1, 1)
         elif cls.__name__ == "Square":
