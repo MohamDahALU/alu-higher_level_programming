@@ -94,6 +94,36 @@ class TestMaxInteger(unittest.TestCase):
     def test_to_dict(self):
         obj = Rectangle(2, 2)
         self.assertEqual(obj.to_dictionary(), {'height': 2, 'id': 18, 'width': 2, 'x': 0, 'y': 0})
+    
+    def test_update_empty(self):
+        obj = Rectangle(2, 2)
+        obj.update()
+        self.assertEqual(obj.width, 2)
+
+    def test_update_one_arg(self):
+        obj = Rectangle(2, 2)
+        obj.update(89)
+        self.assertEqual(obj.id, 89)
+
+    def test_update_two_arg(self):
+        obj = Rectangle(2, 2)
+        obj.update(89, 1)
+        self.assertEqual(obj.width, 1)
+
+    def test_update_three_arg(self):
+        obj = Rectangle(2, 2)
+        obj.update(89, 1, 2)
+        self.assertEqual(obj.height, 2)
+
+    def test_update_four_arg(self):
+        obj = Rectangle(2, 2)
+        obj.update(89, 1, 2, 3)
+        self.assertEqual(obj.x, 3)
+
+    def test_update_five_arg(self):
+        obj = Rectangle(2, 2)
+        obj.update(89, 1, 2, 3, 4)
+        self.assertEqual(obj.y, 4)
         
 if __name__ == '__main__':
     unittest.main()
