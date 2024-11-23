@@ -40,4 +40,4 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         with open("{}.json".format(cls.__name__), "w") as file:
-            file.write(cls.to_json_string([i.to_dictionary for i in list_objs]))
+            file.write(cls.to_json_string([i.to_dictionary() for i in list_objs]))
