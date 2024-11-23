@@ -67,15 +67,18 @@ class TestMaxInteger(unittest.TestCase):
         
     def test_display_no_xy(self):
         obj = Rectangle(2, 2)
-        self.assertEqual(obj.display(), None)
+        stri = obj.display()
+        self.assertEqual(stri, None)
 
     def test_display_no_y(self):
         obj = Rectangle(2, 2, 2)
-        self.assertEqual(obj.display(), None)
+        stri = obj.display()
+        self.assertEqual(stri, None)
         
     def test_display(self):
         obj = Rectangle(2, 2, 2, 2)
-        self.assertEqual(obj.display(), None)
+        stri = obj.display()
+        self.assertEqual(stri, None)
         
 if __name__ == '__main__':
     unittest.main()
