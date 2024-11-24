@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Unittest for Base
 """
+import os
 import unittest
 from models.rectangle import Rectangle
 import io
@@ -146,21 +147,30 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(obj.y, 4)
     
     def test_save_to_file_None(self):
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+            
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
     
     def test_save_to_file_empty(self):
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
     
     def test_save_to_file_two_arg(self):
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
         Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[{"id": 23, "width": 1, "height": 2, "x": 0, "y": 0}]')
     
     def test_load_from_file(self):
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
         Rectangle.save_to_file([Rectangle(1, 2)])
         
         self.assertEqual(Rectangle.load_from_file(), [{"id": 21, "width": 1, "height": 2, "x": 0, "y": 0}])
