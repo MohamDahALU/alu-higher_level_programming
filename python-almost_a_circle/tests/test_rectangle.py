@@ -172,8 +172,8 @@ class TestMaxInteger(unittest.TestCase):
         if os.path.exists("Rectangle.json"):
             os.remove("Rectangle.json")
         Rectangle.save_to_file([Rectangle(1, 2)])
-        
-        self.assertEqual(Rectangle.load_from_file(), [{"id": 21, "width": 1, "height": 2, "x": 0, "y": 0}])
+        objs = Rectangle.load_from_file()
+        self.assertEqual([i.to_dictionary() for i in objs], [{"id": 21, "width": 1, "height": 2, "x": 0, "y": 0}])
         
 if __name__ == '__main__':
     unittest.main()

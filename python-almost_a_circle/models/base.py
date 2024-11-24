@@ -82,7 +82,7 @@ class Base:
             with open("{}.json".format(cls.__name__), "r") as file:
                 jsonData = file.read()
                 dictList = cls.from_json_string(jsonData)
-                insList = [cls.create(**i).to_dictionary() for i in dictList]
+                insList = [cls.create(**i) for i in dictList]
                 return insList
         except Exception:
             return []
