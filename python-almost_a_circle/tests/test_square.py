@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Unittest for Base
 """
+import os
 import unittest
 from models.square import Square
 import io
@@ -129,16 +130,22 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(obj.y, 3)
 
     def test_save_to_file_None(self):
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), '[]')
     
     def test_save_to_file_empty(self):
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), '[]')
     
     def test_save_to_file_one_arg(self):
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
         Square.save_to_file([Square(1)])
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), '[{"id": 42, "size": 1, "x": 0, "y": 0}]')
