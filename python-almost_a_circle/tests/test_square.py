@@ -148,7 +148,19 @@ class TestMaxInteger(unittest.TestCase):
             os.remove("Square.json")
         Square.save_to_file([Square(1)])
         with open("Square.json", "r") as file:
-            self.assertEqual(file.read(), '[{"id": 42, "size": 1, "x": 0, "y": 0}]')
+            self.assertEqual(file.read(), '[{"id": 44, "size": 1, "x": 0, "y": 0}]')
+    
+    def test_load_from_file_not_exists(self):
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        self.assertEqual(Square.load_from_file(), [])
+        
+    def test_load_from_file_exists(self):
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        Square.save_to_file([Square(1)])
+        
+        self.assertEqual(Square.load_from_file(), [{"id": 42, "size": 1, "x": 0, "y": 0}])
     
     
 
