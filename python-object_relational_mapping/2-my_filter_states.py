@@ -24,9 +24,8 @@ if __name__ == "__main__":
     )
     cur = conn.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name = %s\
-        ORDER BY id",
-        [search]
+        "SELECT * FROM states WHERE name = '{}'\
+         ORDER BY id".format(search)
     )
     query_rows = cur.fetchall()
     for row in query_rows:
