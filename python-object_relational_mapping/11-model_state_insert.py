@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """
-Script that lists all State objects from the database
-that contain the letter 'a' in their name, ordered
-by state id.
+Adds a new State object "Louisiana" to the database and
+prints its id.
 """
 
 
