@@ -20,5 +20,24 @@ class TestMaxInteger(unittest.TestCase):
         obj = Square(1, 2, 3)
         self.assertEqual(obj.y, 3)
 
+    def test_square_four_arg(self):
+        obj = Square(1, 2, 3, 4)
+        self.assertEqual(obj.id, 4)
+    
+    def test_square_one_arg_one(self):
+        with self.assertRaises(TypeError) as err:
+            Square("1")
+        self.assertEqual(str(err.exception), "width must be an integer")
+
+    def test_square_one_arg_two(self):
+        with self.assertRaises(TypeError) as err:
+            Square(1, "2")
+        self.assertEqual(str(err.exception), "x must be an integer")
+
+    def test_square_one_arg_two(self):
+        with self.assertRaises(TypeError) as err:
+            Square(1, 2, "3")
+        self.assertEqual(str(err.exception), "y must be an integer")
+
 if __name__ == '__main__':
     unittest.main()
