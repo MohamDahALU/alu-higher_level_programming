@@ -62,6 +62,56 @@ class TestMaxInteger(unittest.TestCase):
     def test_str(self):
         obj = Square(2, 2, 2, 10)
         self.assertEqual(obj.__str__(), "[Square] (10) 2/2 - 2")
+    
+    def test_to_dict(self):
+        obj = Square(2, 2, 2, 100)
+        self.assertEqual(obj.to_dictionary(), {'size': 2, 'id': 100, 'x': 2, 'y': 2})
+    
+    def test_update_empty(self):
+        obj = Square(2)
+        obj.update()
+        self.assertEqual(obj.size, 2)
+
+    def test_update_one_arg(self):
+        obj = Square(2)
+        obj.update(89)
+        self.assertEqual(obj.id, 89)
+
+    def test_update_two_arg(self):
+        obj = Square(2)
+        obj.update(89, 1)
+        self.assertEqual(obj.size, 1)
+
+    def test_update_three_arg(self):
+        obj = Square(2)
+        obj.update(89, 1, 2)
+        self.assertEqual(obj.x, 2)
+
+    def test_update_four_arg(self):
+        obj = Square(2)
+        obj.update(89, 1, 2, 3)
+        self.assertEqual(obj.y, 3)
+    
+    def test_update_one_kwarg(self):
+        obj = Square(2)
+        obj.update(**{ 'id': 89})
+        self.assertEqual(obj.id, 89)
+
+    def test_update_two_kwarg(self):
+        obj = Square(2)
+        obj.update(**{ 'id': 89, 'size': 1})
+        self.assertEqual(obj.size, 1)
+
+    def test_update_three_kwarg(self):
+        obj = Square(2)
+        obj.update(**{ 'id': 89, 'size': 1, 'x': 2})
+        self.assertEqual(obj.x, 2)
+
+    def test_update_four_kwarg(self):
+        obj = Square(2)
+        obj.update(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3})
+        self.assertEqual(obj.y, 3)
+        
 
         
 if __name__ == '__main__':
