@@ -21,7 +21,10 @@ if __name__ == "__main__":
         charset="utf8",
     )
     cur = conn.cursor()
-    cur.execute("SELECT * FROM cities ORDER BY cities.id")
+    cur.execute(
+        "SELECT cities.id, states.name, cities.name FROM cities\
+         JOIN states ON cities.state_id = states.id"
+    )
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
