@@ -111,7 +111,39 @@ class TestMaxInteger(unittest.TestCase):
         obj = Square(2)
         obj.update(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3})
         self.assertEqual(obj.y, 3)
-        
+    
+    def test_create_one_kwarg(self):
+        obj = Square.create(**{ 'id': 89 })
+        self.assertEqual(obj.id, 89)
+
+    def test_create_two_kwarg(self):
+        obj = Square.create(**{ 'id': 89, 'size': 1 })
+        self.assertEqual(obj.size, 1)
+
+    def test_create_three_kwarg(self):
+        obj = Square.create(**{ 'id': 89, 'size': 1, 'x': 2 })
+        self.assertEqual(obj.x, 2)
+
+    def test_create_four_kwarg(self):
+        obj = Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
+        self.assertEqual(obj.y, 3)
+
+    def test_save_to_file_None(self):
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+    
+    def test_save_to_file_empty(self):
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+    
+    def test_save_to_file_one_arg(self):
+        Square.save_to_file([Square(1)])
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), '[{"id": 42, "size": 1, "x": 0, "y": 0}]')
+    
+    
 
         
 if __name__ == '__main__':
