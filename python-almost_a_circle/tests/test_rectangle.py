@@ -144,6 +144,26 @@ class TestMaxInteger(unittest.TestCase):
     def test_create_five_kwarg(self):
         obj = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
         self.assertEquals(obj.y, 4)
+    
+    def test_save_to_file_None(self):
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+    
+    def test_save_to_file_empty(self):
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+    
+    def test_save_to_file_two_arg(self):
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[{"id": 23, "width": 1, "height": 2, "x": 0, "y": 0}]')
+    
+    def test_load_from_file(self):
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        
+        self.assertEqual(Rectangle.load_from_file(), [{"id": 21, "width": 1, "height": 2, "x": 0, "y": 0}])
         
 if __name__ == '__main__':
     unittest.main()
