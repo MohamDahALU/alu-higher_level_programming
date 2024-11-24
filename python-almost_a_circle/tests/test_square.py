@@ -38,6 +38,26 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError) as err:
             Square(1, 2, "3")
         self.assertEqual(str(err.exception), "y must be an integer")
+    
+    def test_square_one_arg_negative(self):
+        with self.assertRaises(TypeError) as err:
+            Square(0)
+        self.assertEqual(str(err.exception), "width must be > 0")
+        
+    def test_square_one_arg_negative(self):
+        with self.assertRaises(TypeError) as err:
+            Square(-1)
+        self.assertEqual(str(err.exception), "width must be > 0")
+    
+    def test_square_two_arg_negative(self):
+        with self.assertRaises(TypeError) as err:
+            Square(1, -2)
+        self.assertEqual(str(err.exception), "x must be >= 0")
+    
+    def test_square_three_arg_negative(self):
+        with self.assertRaises(TypeError) as err:
+            Square(1, 2, -3)
+        self.assertEqual(str(err.exception), "y must be >= 0")
 
 if __name__ == '__main__':
     unittest.main()
