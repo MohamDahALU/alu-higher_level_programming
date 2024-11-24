@@ -92,8 +92,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(captured_output.getvalue(), "\n\n  ##\n  ##\n")
     
     def test_to_dict(self):
-        obj = Rectangle(2, 2)
-        self.assertEqual(obj.to_dictionary(), {'height': 2, 'id': 18, 'width': 2, 'x': 0, 'y': 0})
+        obj = Rectangle(2, 2, 2, 2, 100)
+        self.assertEqual(obj.to_dictionary(), {'height': 2, 'id': 100, 'width': 2, 'x': 2, 'y': 2})
     
     def test_update_empty(self):
         obj = Rectangle(2, 2)
