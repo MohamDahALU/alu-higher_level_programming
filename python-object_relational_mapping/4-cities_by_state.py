@@ -21,7 +21,7 @@ if __name__ == "__main__":
         charset="utf8",
     )
     cur = conn.cursor()
-    cur.execute("SELECT * FROM cities")
+    cur.execute("SELECT * FROM cities ORDER BY cities.id")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
