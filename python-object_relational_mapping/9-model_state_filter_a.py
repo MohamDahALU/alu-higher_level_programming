@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Script that lists all State objects from the database
+that contain the letter 'a' in their name, ordered
+by state id.
+"""
 
 
 from sqlalchemy import create_engine
