@@ -125,5 +125,25 @@ class TestMaxInteger(unittest.TestCase):
         obj.update(89, 1, 2, 3, 4)
         self.assertEqual(obj.y, 4)
         
+    def test_create_one_kwarg(self):
+        obj = Rectangle.create(**{ 'id': 89 })
+        self.assertEquals(obj.id, 89)
+
+    def test_create_two_kwarg(self):
+        obj = Rectangle.create(**{ 'id': 89, 'width': 1 })
+        self.assertEquals(obj.width, 1)
+
+    def test_create_three_kwarg(self):
+        obj = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 })
+        self.assertEquals(obj.height, 2)
+
+    def test_create_four_kwarg(self):
+        obj = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+        self.assertEquals(obj.x, 3)
+
+    def test_create_five_kwarg(self):
+        obj = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+        self.assertEquals(obj.y, 4)
+        
 if __name__ == '__main__':
     unittest.main()
