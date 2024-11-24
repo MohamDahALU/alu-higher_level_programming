@@ -58,6 +58,11 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(ValueError) as err:
             Square(0)
         self.assertEqual(str(err.exception), "width must be > 0")
+    
+    def test_str(self):
+        obj = Square(2, 2, 2, 10)
+        self.assertEqual(obj.__str__(), "[Square] (10) 2/2 - 2")
+
         
 if __name__ == '__main__':
     unittest.main()
