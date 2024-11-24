@@ -145,13 +145,13 @@ class TestMaxInteger(unittest.TestCase):
         obj = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
         self.assertEquals(obj.y, 4)
     
-    def test_save_to_file_None(self):
-        Rectangle.save_to_file(None)
+    def test_save_to_file_empty(self):
+        Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
     
-    def test_save_to_file_empty(self):
-        Rectangle.save_to_file([])
+    def test_save_to_file_None(self):
+        Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
     
