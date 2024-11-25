@@ -8,7 +8,9 @@ from model_state import Base, State
 
 
 class City(Base):
-
+    """
+    City class represents a city in the database, linked to the states table.
+    """
     __tablename__ = "cities"
     id = Column(
         Integer,
