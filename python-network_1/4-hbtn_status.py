@@ -3,14 +3,22 @@
 This script makes a request and displays a
 response using the requests package.
 """
+
 import requests
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     url = 'https://intranet.hbtn.io/status'
     if url.startswith('https://'):
         url = "https://alu-intranet.hbtn.io/status"
-    response = requests.get(url)
-
+    res = requests.get(url)
     print("Body response:")
-    print(f"\t- type: {type(response.text)}")
-    print(f"\t- content: {response.text}")
+    print("\t- type: {}".format(type(res.text)))
+    print("\t- content: {}".format(res.text))
+
+
+# if __name__ == "__main__":
+#     response = requests.get("https://alu-intranet.hbtn.io/status")
+
+#     print("Body response:")
+#     print(f"\t- type: {type(response.text)}")
+#     print(f"\t- content: {response.text}")
