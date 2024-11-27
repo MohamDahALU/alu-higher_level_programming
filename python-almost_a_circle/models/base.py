@@ -5,6 +5,7 @@ for other classes in the project.
 
 """
 import json
+import csv
 
 
 class Base:
@@ -84,5 +85,42 @@ class Base:
                 dictList = cls.from_json_string(jsonData)
                 insList = [cls.create(**i) for i in dictList]
                 return insList
+        except Exception:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Writes the CSV string representation of list_objs to a file.
+        """
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, "w", newline='') as csvfile:
+            if list_objs:
+                writer = csv.writer(csvfile)
+                if cls.__name__ == "Rectangle":
+                    writer.writerow(["id", "width", "height", "x", "y"])
+                    for obj in list_objs:
+                        writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                elif cls.__name__ == "Square":
+                    writer.writerow(["id", "size", "x", "y"])
+                    for obj in list_objs:
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
+            else:
+                csvfile.write("")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Reads a CSV file and returns a list of instances of the class.
+        """
+        filename = "{}.csv".format(cls.__name__)
+        try:
+            with open(filename, "r", newline='') as csvfile:
+                reader = csv.DictReader(csvfile)
+                dict_list = [dict(row) for row in reader]
+                for d in dict_list:
+                    for key in d:
+                        d[key] = int(d[key])
+                return [cls.create(**d) for d in dict_list]
         except Exception:
             return []
