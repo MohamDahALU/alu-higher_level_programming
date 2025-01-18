@@ -1,1 +1,1 @@
-A directory for the intranet project: JavaScript - Warm up
+# A directory for the intranet project: JavaScript - Warm up
