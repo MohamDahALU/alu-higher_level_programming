@@ -1,8 +1,9 @@
 #!/usr/bin/node
 
-function nbOccurences (list, searchElement) {
-  return list.reduce((a, i) => i === searchElement ? a + 1 : a, 0);
+function esrever (list) {
+  const newList = [];
+  list.forEach(i => newList.unshift(i));
+  return newList;
 }
 
-
-module.exports = { nbOccurences };
+module.exports = { esrever };
