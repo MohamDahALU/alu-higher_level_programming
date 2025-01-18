@@ -1,0 +1,1 @@
+# A directory for the intranet project: JavaScript - Objects, Scopes and Closures
