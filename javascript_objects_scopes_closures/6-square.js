@@ -1,7 +1,5 @@
 #!/usr/bin/node
 
-
-
 class Square extends require('./5-square') {
   charPrint (c) {
     c = c ? '' + c : 'X';
